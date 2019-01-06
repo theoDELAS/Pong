@@ -8,7 +8,7 @@ fenetre.title('Pong Game')
 ecran_x = fenetre.winfo_screenwidth()
 ecran_y = fenetre.winfo_screenheight()
 fenetre_x = ecran_x - 5
-fenetre_y = ecran_y - 200
+fenetre_y = ecran_y - 75
 
 #calcul pour faire spawn fenetre au centre de l'ecran
 pos_x = (ecran_x // 2) - (fenetre_x //2)
@@ -55,25 +55,24 @@ def init_canvas_menu():
     canevas.delete(ALL)
     bouton_menu.pack_forget()
     canevas.create_text(fenetre_x // 2, 200, fill = "white", font = ("Roboto", 75), text = "MENU PRINCIPAL")
-    bouton_parametres.pack()
+    bouton_parametres.place(relx = 0.5, rely = 0.5, anchor = CENTER)
 
 ############### PARAMETRES #####################
 def init_canvas_parametres():
     canevas.delete(ALL)
-    bouton_parametres.pack_forget()
+    bouton_parametres.place_forget()
     canevas.create_text(fenetre_x // 2, 200, fill = "white", font = ("Roboto", 75), text = "PARAMETRES")
-    canevas.create_text(fenetre_x // 2, 500, fill = "white", font = ("Roboto", 35), text = "Choisissez votre niveau de difficuulté")
-    bouton_facile.pack()
-    bouton_normal.pack()
-    bouton_difficile.pack()
+    bouton_facile.place(relx = 0.5, rely = 0.4, anchor = CENTER)
+    bouton_normal.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+    bouton_difficile.place(relx = 0.5, rely = 0.6, anchor = CENTER)
 
 ############### JEU FACILE #####################
 def init_canvas_jeu_facile(): 
     canevas.delete(ALL)
-    bouton_facile.pack_forget()
-    bouton_normal.pack_forget()
-    bouton_difficile.pack_forget()
-    bouton_menu.pack()
+    bouton_facile.place_forget()
+    bouton_normal.place_forget()
+    bouton_difficile.place_forget()
+    bouton_quit.place_forget()
     canevas.create_line(fenetre_x // 2, 0, fenetre_x // 2, fenetre_y, fill = "white", width = 5)
     global x0, x1, y0, y1, balle, joueur_1, joueur_2
     balle = canevas.create_oval(x0, y0, x1, y1, fill = "red")
@@ -125,10 +124,10 @@ def init_canvas_jeu_facile():
 ################# JEU NORMAL ########################
 def init_canvas_jeu_normal(): 
     canevas.delete(ALL)
-    bouton_facile.pack_forget()
-    bouton_normal.pack_forget()
-    bouton_difficile.pack_forget()
-    bouton_menu.pack()
+    bouton_facile.place_forget()
+    bouton_normal.place_forget()
+    bouton_difficile.place_forget()
+    bouton_quit.place_forget()
     canevas.create_line(fenetre_x // 2, 0, fenetre_x // 2, fenetre_y, fill = "white", width = 5)
     global x0, x1, y0, y1, balle, joueur_1, joueur_2
     balle = canevas.create_oval(x0, y0, x1, y1, fill = "red")
@@ -179,10 +178,10 @@ def init_canvas_jeu_normal():
 ############## JEU DIFFICILE #################
 def init_canvas_jeu_difficile(): 
     canevas.delete(ALL)
-    bouton_facile.pack_forget()
-    bouton_normal.pack_forget()
-    bouton_difficile.pack_forget()
-    bouton_menu.pack()
+    bouton_facile.place_forget()
+    bouton_normal.place_forget()
+    bouton_difficile.place_forget()
+    bouton_quit.place_forget()
     canevas.create_line(fenetre_x // 2, 0, fenetre_x // 2, fenetre_y, fill = "white", width = 5)
     global x0, x1, y0, y1, balle, joueur_1, joueur_2
     balle = canevas.create_oval(x0, y0, x1, y1, fill = "red")
@@ -234,24 +233,25 @@ def init_canvas_jeu_difficile():
 ############### ECRAN DE GAMEOVER #############
 def init_canvas_gameover():
     canevas.delete(ALL)
-    bouton_facile.pack()
-    bouton_normal.pack()
-    bouton_difficile.pack()
-    bouton_menu.pack_forget()
-    canevas.create_text(fenetre_x // 2, 300, fill = "red", font = ("Roboto", 75), text = "GAME OVER")
+    bouton_facile.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+    bouton_normal.place(relx = 0.5, rely = 0.6, anchor = CENTER)
+    bouton_difficile.place(relx = 0.5, rely = 0.7, anchor = CENTER)
+    bouton_quit.place(relx = 0.5, rely = 0.9, anchor = CENTER)
+    canevas.create_text(fenetre_x // 2, 200, fill = "red", font = ("Roboto", 75), text = "GAME OVER")
+    canevas.create_text(fenetre_x // 2, 350, fill = "red", font = ("Roboto", 45), text = "Rejouer ?")
 
 
 
 # Création des composants
-boutton_quit = Button(fenetre, text = "Quit", command = fenetre.destroy)
+bouton_quit = Button(fenetre, text = "Quit", width = 20, height = 3, command = fenetre.destroy)
 bouton_menu = Button(fenetre, text = "Menu", command = init_canvas_menu)
-bouton_facile = Button(fenetre, text = "Facile", command = init_canvas_jeu_facile)
-bouton_normal = Button(fenetre, text = "Normal", command = init_canvas_jeu_normal)
-bouton_difficile = Button(fenetre, text = "Difficile", command = init_canvas_jeu_difficile)
-bouton_parametres = Button(fenetre, text = "Parametres", command = init_canvas_parametres)
+bouton_facile = Button(fenetre, text = "Facile", width = 20, height = 3, command = init_canvas_jeu_facile)
+bouton_normal = Button(fenetre, text = "Normal", width = 20, height = 3, command = init_canvas_jeu_normal)
+bouton_difficile = Button(fenetre, text = "Difficile",  width = 20, height = 3, command = init_canvas_jeu_difficile)
+bouton_parametres = Button(fenetre, text = "Parametres", width = 20, height = 3, command = init_canvas_parametres)
 
 # placement des composants
-boutton_quit.pack()
+bouton_quit.place(relx = 0.5, rely = 0.9, anchor = CENTER)
 canevas.pack()
 init_canvas_menu()
 
