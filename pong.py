@@ -68,8 +68,8 @@ def init_canvas_regles():
     bouton_regles.place_forget()
     canevas.create_text(fenetre_x // 2, 200, fill = "white", font = ("Roboto", 75), text = "RELGES/CONTROLES")
     canevas.create_text(fenetre_x // 2, 400, fill = "white", font = ("Roboto", 25), text = "Le but est de faire passer la balle dans le but adverse")
-    canevas.create_text(fenetre_x // 2, 500, fill = "white", font = ("Roboto", 25), text = "Le joueur 1 deplace sa raquette avec les touches du clavier :\n - Z pour monter\n  - S pour descendre")
-    canevas.create_text(fenetre_x // 2, 700, fill = "white", font = ("Roboto", 25), text = "Le joueur 2 deplace sa raquette avec les touches directionnelles du clavier :\n - fleche du haut pour monter\n  - fleche du bas pour descendre")
+    canevas.create_text(fenetre_x // 2, 500, fill = "white", font = ("Roboto", 25), text = "Le joueur 1 déplace sa raquette avec les touches du clavier :\n - Z pour monter\n  - S pour descendre")
+    canevas.create_text(fenetre_x // 2, 700, fill = "white", font = ("Roboto", 25), text = "Le joueur 2 déplace sa raquette avec les touches directionnelles du clavier :\n - flèche du haut pour monter\n  - flèche du bas pour descendre")
 
 ############### PARAMETRES #####################
 def init_canvas_parametres():
