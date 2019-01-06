@@ -1,7 +1,10 @@
 # Projet de première année Ingésup Ynov Informatique.  
-Pong en python avec l'interface TKinter. 
+Creation d'un Pong en python avec l'interface TKinter. 
 ## Règles du jeu 
-+ Les joueurs peuvent choissir leur niveau de difficulté.  
 + Chaque joueur possède une "raquette" située sur les extrémités de la fenêtre de jeu.  
-+ Chaque raquette peut être déplacée grâce aux touches directionnelles pour le joueur de droite, et avec les touches Z et S du clavier pour le joueur de gauche.  
-+ Une fois la partie terminée, le joueur a la possibilité soit de relancer directement le jeu en choisissant le nveau de difficulté (soit le même, soit un autre), ou de retourner au menu principal.  
++ Le but est faire passer la balle dans le but adverse.  
++ Chaque raquette peut être déplacée :  
+    + avec les touches Z et S du clavier pour le joueur 1 (de gauche)
+    + avec les touches directionnelles pour le joueur 2 (de droite)  
++ Les joueurs peuvent choisir le niveau de difficulté.  
++ Une fois la partie terminée, le joueur a la possibilité de relancer directement le jeu en choisissant le niveau de difficulté (le même qu'a la partie precedente ou bien un autre).
